@@ -1,4 +1,5 @@
 const INITIAL_VALUE = 0.025
+const VELOCITY_INCREASE = 0.00001
 
 export default class Ball{
     constructor(ballElem) {
@@ -41,6 +42,7 @@ export default class Ball{
     update(delta){
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
+        this.velocity += VELOCITY_INCREASE * delta
         const rect = this.rect()
 
         if(rect.bottom >= window.innerHeight || rect.top <=0){
