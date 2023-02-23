@@ -16,4 +16,8 @@ function update(time){
     window.requestAnimationFrame(update)
 }
 
+document.addEventListener("mousemove", e => {
+    playerPaddle.position = (e.y / window.innerHeight) * 100
+})
+
 window.requestAnimationFrame(update)
